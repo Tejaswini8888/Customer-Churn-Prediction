@@ -1,7 +1,8 @@
-fastapi
-uvicorn
+streamlit==1.29.0
+altair ==4.2.2
+requests
 pandas
 scikit-learn
 xgboost
-streamlit
-requests
+fastapi
+uvicorn
