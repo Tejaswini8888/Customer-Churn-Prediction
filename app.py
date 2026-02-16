@@ -10,7 +10,7 @@ total = st.slider("Total Charges", 0, 10000, 500)
 
 if st.button("Predict"):
 
-    url = "http://127.0.0.1:8000/predict"
+    url = "https://customer-churn-prediction-3lal.onrender.com/predict"
 
     params = {
         "SeniorCitizen": senior,
