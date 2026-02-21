@@ -1,57 +1,80 @@
-# 📊 Customer Churn Prediction API
-🚀 XGBoost + FastAPI | Production-Ready ML System
+# 📊 Customer Churn Prediction API  
+## 🚀 XGBoost + FastAPI | Production-Ready ML System  
 
-A production-ready Machine Learning system that predicts customer churn using XGBoost and exposes real-time predictions through a FastAPI REST API deployed on Render.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![XGBoost](https://img.shields.io/badge/XGBoost-Classifier-orange)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Render](https://img.shields.io/badge/Render-Deployed-blue)
 
-## 📌 Project Overview
+---
 
-This project implements a complete end-to-end ML workflow:
-🔹 Data preprocessing & feature engineering
-🔹 Model training using XGBoost
-🔹 Model evaluation & validation
-🔹 REST API development using FastAPI
-🔹 Cloud deployment for real-time inference
+## 📌 Project Overview  
+
+This project implements a complete end-to-end Machine Learning workflow:
+
+- 🔹 Data preprocessing & feature engineering  
+- 🔹 Model training using XGBoost  
+- 🔹 Model evaluation & validation  
+- 🔹 REST API development using FastAPI  
+- 🔹 Cloud deployment for real-time inference  
 
 The system helps businesses proactively identify customers likely to churn and take retention actions.
 
-## 🧠 Model Details
+---
 
-Algorithm: XGBoost Classifier
-Problem Type: Binary Classification
-Target Variable: Churn (0 = Stay, 1 = Leave)
-Techniques Used:
-Feature Engineering
-Train-Test Split
-Model Evaluation
-Hyperparameter Configuration
+## 🧠 Model Details  
 
-### 🏗 System Architecture
+- **Algorithm:** XGBoost Classifier  
+- **Problem Type:** Binary Classification  
+- **Target Variable:**  
+  - `0` → Customer Stays  
+  - `1` → Customer Leaves  
+
+### Techniques Used  
+
+- Feature Engineering  
+- Train-Test Split  
+- Model Evaluation  
+- Hyperparameter Configuration  
+
+---
+
+## 🏗 System Architecture  
+
+```
 User → FastAPI Backend → XGBoost Model → Prediction Response
+```
 
-The trained model is serialized using Pickle and loaded into the FastAPI application for real-time inference.
+The trained model is serialized using **Pickle** and loaded into the FastAPI application for real-time inference.
 
-### 🛠 Tech Stack
+---
 
-#### 💻 Programming
-Python
-#### 🤖 Machine Learning
-XGBoost
-Scikit-learn
+## 🛠 Tech Stack  
 
-#### 📊 Data Processing
-Pandas
-NumPy
+### 💻 Programming  
+- Python  
 
-#### 🌐 Backend
-FastAPI
-Uvicorn
+### 🤖 Machine Learning  
+- XGBoost  
+- Scikit-learn  
 
-#### ☁ Deployment
+### 📊 Data Processing  
+- Pandas  
+- NumPy  
 
-Render
-Git & GitHub
+### 🌐 Backend  
+- FastAPI  
+- Uvicorn  
 
-## 📂 Project Structure
+### ☁ Deployment  
+- Render  
+- Git & GitHub  
+
+---
+
+## 📂 Project Structure  
+
+```
 Customer-Churn-Prediction/
 │
 ├── api.py
@@ -60,44 +83,107 @@ Customer-Churn-Prediction/
 ├── churn.csv
 ├── requirements.txt
 └── README.md
+```
 
-### ⚙️ Run Locally
-1️⃣ Clone Repository
-git clone https://github.com/your-username/Customer-Churn-Prediction.git
+---
+
+## ⚙️ Run Locally  
+
+### 1️⃣ Clone Repository  
+
+```bash
+git clone https://github.com/Tejaswini8888/Customer-Churn-Prediction.git
 cd Customer-Churn-Prediction
-2️⃣ Install Dependencies
+```
+
+### 2️⃣ Install Dependencies  
+
+```bash
 pip install -r requirements.txt
-3️⃣ Start API Server
-python -m uvicorn api:app --reload
+```
 
-Open in browser:
+### 3️⃣ Train Model  
 
+```bash
+python train_model.py
+```
+
+### 4️⃣ Start API Server  
+
+```bash
+uvicorn api:app --reload
+```
+
+Open Swagger UI in browser:
+
+```
 http://127.0.0.1:8000/docs
-📡 API Endpoints
-🔹 GET /
+```
 
-Health check endpoint
+---
 
-🔹 POST /predict
+## 📡 API Endpoints  
 
-Predict churn using:
-SeniorCitizen
-tenure
-MonthlyCharges
-TotalCharges
+### 🔹 GET `/`  
+Health check endpoint  
 
-## 🌐 Live Deployment
+### 🔹 POST `/predict`  
+
+Predict churn using the following input features:
+
+- `SeniorCitizen`  
+- `tenure`  
+- `MonthlyCharges`  
+- `TotalCharges`  
+
+---
+
+### 📥 Example Request  
+
+```json
+{
+  "SeniorCitizen": 0,
+  "tenure": 24,
+  "MonthlyCharges": 70.5,
+  "TotalCharges": 1680.2
+}
+```
+
+---
+
+### 📤 Example Response  
+
+```json
+{
+  "prediction": 1,
+  "churn_probability": 0.7421
+}
+```
+
+---
+
+## 🌐 Live Deployment  
 
 🔗 https://customer-churn-prediction-mt.streamlit.app/
+---
 
-### 📈 Future Improvements
+## 📈 Future Improvements  
 
-Docker containerization
-CI/CD integration
-Model monitoring & logging
-Advanced feature engineering
+- Docker containerization  
+- CI/CD integration  
+- Model monitoring & logging  
+- SHAP explainability integration  
+- Advanced feature engineering  
 
-### 👩‍💻 Author
+---
 
-Tejaswini Madarapu
-GitHub: https://github.com/Tejaswini8888
+## 👩‍💻 Author  
+
+**Tejaswini Madarapu**  
+
+🔗 GitHub: https://github.com/Tejaswini8888  
+🔗 LinkedIn: https://www.linkedin.com/in/tejaswini-madarapu/  
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
